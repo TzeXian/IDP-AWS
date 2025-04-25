@@ -1,0 +1,41 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "types": ["jest", "node"],
+    "paths": {
+      "@stack/assets/*": ["libs/shared-assets/src/*"],
+      "@stack/ui/*": ["libs/ui-components/src/*"],
+      "@stack/ui": ["libs/ui-components/src/index.ts"],
+      "@stack/data-access": ["libs/data-access/src/index.ts"],
+      "@stack/helpers/*": ["libs/util-helpers/src/*"],
+      "@stack/helpers": ["libs/util-helpers/src/index.ts"],
+      "@stack/theme": ["libs/ui-theme/src/index.ts"],
+      "@stack/theme/*": ["libs/ui-theme/src/*"],
+      "@types/*": ["apps/web/src/@types/*"],
+      "@types": ["apps/web/src/@types/index.ts"],
+      "@apps/*": ["apps/web/src/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "next-env.d.ts"],
+  "exclude": [
+    "node_modules",
+    "jest.config.ts",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts"
+  ]
+}
